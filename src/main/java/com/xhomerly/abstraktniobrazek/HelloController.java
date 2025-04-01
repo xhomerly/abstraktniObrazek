@@ -92,45 +92,6 @@ public class HelloController {
     }
 
     public void graphY() {
-        Stage stage = new Stage();
-        stage.setTitle("Graph Y");
 
-        VBox root = new VBox();
-        NumberAxis xAxis = new NumberAxis();
-        xAxis.setLabel("Intervaly středů úseček");
-        xAxis.setTickUnit(10); // Set interval between ticks
-
-        NumberAxis yAxis = new NumberAxis();
-        yAxis.setLabel("Počet středů");
-
-        // Create line chart
-        LineChart<Number, Number> lineChart = new LineChart<>(xAxis, yAxis);
-        lineChart.setTitle("Rozložení středů úseček na ose X");
-        lineChart.setLegendVisible(false);
-        lineChart.setCreateSymbols(true); // Shows data points as circles
-
-        // Create data series
-        XYChart.Series<Number, Number> series = new XYChart.Series<>();
-        series.setName("Distribuce středů");
-
-        // Add sample data (replace with your actual data)
-        // Using midpoints of each interval for X values
-        series.getData().add(new XYChart.Data<>(5, 15));  // 0-10 interval
-        series.getData().add(new XYChart.Data<>(15, 23)); // 10-20 interval
-        series.getData().add(new XYChart.Data<>(25, 18)); // 20-30 interval
-        series.getData().add(new XYChart.Data<>(35, 12)); // 30-40 interval
-        series.getData().add(new XYChart.Data<>(45, 8));  // 40-50 interval
-        series.getData().add(new XYChart.Data<>(55, 5));  // 50-60 interval
-
-        // Add series to chart
-        lineChart.getData().add(series);
-
-        // Customize the line appearance
-        series.getNode().setStyle("-fx-stroke: #2c3e50; -fx-stroke-width: 2px;");
-
-        root.getChildren().add(lineChart);
-        Scene scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
     }
 }
