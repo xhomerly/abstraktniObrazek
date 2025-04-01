@@ -32,7 +32,6 @@ public class HelloController {
 
     public void create() {
         int numOfLines = Integer.parseInt(textField.getText());
-        System.out.println(numOfLines);
         for (int i = 0; i < numOfLines; i++) {
             int randX1 = (int) (Math.random() * 500);
             int randX2 = (int) (Math.random() * 500);
